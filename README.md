@@ -1,0 +1,2 @@
+# docs
+ScoutRED API docs
