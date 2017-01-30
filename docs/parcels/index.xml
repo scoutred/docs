@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parcels on ScoutRED API</title>
+    <link>http://docs.scoutred.com/parcels/</link>
+    <description>Recent content in Parcels on ScoutRED API</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Jan 2017 19:56:50 +0100</lastBuildDate>
+    <atom:link href="http://docs.scoutred.com/parcels/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Parcels</title>
+      <link>http://docs.scoutred.com/parcels/</link>
+      <pubDate>Thu, 26 Jan 2017 19:56:50 +0100</pubDate>
+      
+      <guid>http://docs.scoutred.com/parcels/</guid>
+      <description>
+
+&lt;h2 id=&#34;api-parcels-id&#34;&gt;/api/parcels/:id&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;/api/parcels/:id&lt;/code&gt; endpoint will return data for a parcel using the parcel&amp;rsquo;s ScoutRED parcel ID.&lt;/p&gt;
+
+&lt;h3 id=&#34;http-endpiont&#34;&gt;HTTP Endpiont&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;https://scoutred.com/api/parcels/:id&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;url-params&#34;&gt;URL params&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:id&lt;/code&gt; - The parcel&amp;rsquo;s ScoutRED parcel ID. The ID can be obtained using the Address Search API.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;example-request&#34;&gt;Example Request&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# GET address suggestions based on the supplied query
+$ curl -H &amp;quot;Authorization: Bearer [token]&amp;quot; \ 
+	-XGET https://scoutred.com/api/parcels/210502
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;example-response&#34;&gt;Example Response&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;id&amp;quot;: 210502,
+    &amp;quot;stateFIPS&amp;quot;: &amp;quot;06&amp;quot;,
+    &amp;quot;countyFIPS&amp;quot;: &amp;quot;073&amp;quot;,
+    &amp;quot;apn&amp;quot;: &amp;quot;4415811100&amp;quot;,
+    &amp;quot;owner&amp;quot;: {
+        &amp;quot;name1&amp;quot;: &amp;quot;REDACTED&amp;quot;,
+        &amp;quot;name2&amp;quot;: null,
+        &amp;quot;name3&amp;quot;: null,
+        &amp;quot;address1&amp;quot;: &amp;quot;REDACTED&amp;quot;,
+        &amp;quot;address2&amp;quot;: &amp;quot;REDACTED&amp;quot;,
+        &amp;quot;address3&amp;quot;: null,
+        &amp;quot;address4&amp;quot;: null,
+        &amp;quot;postal&amp;quot;: &amp;quot;REDACTED&amp;quot; // 
+    },
+    &amp;quot;legalDescription&amp;quot;: &amp;quot;BLK 1*&amp;quot;,
+    &amp;quot;subdivision&amp;quot;: {
+        &amp;quot;name&amp;quot;: &amp;quot;000578&amp;quot;,
+        &amp;quot;map&amp;quot;: &amp;quot;ASCHOFF MILLER \u0026 KELLYS SUB&amp;quot;
+    },
+    &amp;quot;assessor&amp;quot;: {
+        &amp;quot;land&amp;quot;: 176769,
+        &amp;quot;improvements&amp;quot;: 91918
+    },
+    &amp;quot;communityPlan&amp;quot;: {
+        &amp;quot;id&amp;quot;: 48,
+        &amp;quot;name&amp;quot;: &amp;quot;MIDWAY-PACIFIC HIGHWAY&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;The Midway/Pacific Highway Corridor Community (e.g. Midway) is situated north of the Centre City ...&amp;quot;,
+        &amp;quot;references&amp;quot;: null,
+        &amp;quot;created&amp;quot;: &amp;quot;2016-04-30T01:58:46.089268Z&amp;quot;,
+        &amp;quot;updated&amp;quot;: &amp;quot;2016-05-08T20:52:41.756657Z&amp;quot;
+    },
+    &amp;quot;zoning&amp;quot;: [{
+        &amp;quot;id&amp;quot;: 173,
+        &amp;quot;jurisdiction&amp;quot;: {
+            &amp;quot;id&amp;quot;: 2,
+            &amp;quot;name&amp;quot;: &amp;quot;City of San Diego&amp;quot;,
+            &amp;quot;created&amp;quot;: &amp;quot;2016-03-27T01:15:32.875962Z&amp;quot;,
+            &amp;quot;updated&amp;quot;: &amp;quot;2016-03-27T01:15:32.875962Z&amp;quot;
+        },
+        &amp;quot;designation&amp;quot;: &amp;quot;IS-1-1&amp;quot;,
+        &amp;quot;description&amp;quot;: null,
+        &amp;quot;regulations&amp;quot;: [{
+            &amp;quot;id&amp;quot;: 114,
+            &amp;quot;zoningId&amp;quot;: 173,
+            &amp;quot;lotSize&amp;quot;: {
+                &amp;quot;minArea&amp;quot;: null,
+                &amp;quot;maxArea&amp;quot;: null,
+                &amp;quot;minWidth&amp;quot;: null,
+                &amp;quot;minWidthCorner&amp;quot;: null,
+                &amp;quot;minFrontage&amp;quot;: null,
+                &amp;quot;minDepth&amp;quot;: null
+            },
+            &amp;quot;density&amp;quot;: {
+                &amp;quot;sfDu&amp;quot;: null,
+                &amp;quot;sfDuNote&amp;quot;: null
+            },
+            &amp;quot;heightLimit&amp;quot;: {
+                &amp;quot;max&amp;quot;: null,
+                &amp;quot;aboveEnclosedParking&amp;quot;: null,
+                &amp;quot;roofFlat&amp;quot;: null,
+                &amp;quot;roofPitched&amp;quot;: null,
+                &amp;quot;note&amp;quot;: null
+            },
+            &amp;quot;far&amp;quot;: {
+                &amp;quot;base&amp;quot;: 2,
+                &amp;quot;min&amp;quot;: null,
+                &amp;quot;max&amp;quot;: null,
+                &amp;quot;residential&amp;quot;: null,
+                &amp;quot;commercial&amp;quot;: null,
+                &amp;quot;mixed&amp;quot;: null,
+                &amp;quot;note&amp;quot;: null
+            },
+            &amp;quot;setbacks&amp;quot;: {
+                &amp;quot;frontMin&amp;quot;: 10,
+                &amp;quot;frontMinNote&amp;quot;: null,
+                &amp;quot;frontMax&amp;quot;: null,
+                &amp;quot;frontMaxNote&amp;quot;: null,
+                &amp;quot;interiorSide&amp;quot;: null,
+                &amp;quot;interiorSideNote&amp;quot;: &amp;quot;5 / 0&amp;quot;,
+                &amp;quot;streetSide&amp;quot;: 10,
+                &amp;quot;streetSideNote&amp;quot;: null,
+                &amp;quot;rear&amp;quot;: 15,
+                &amp;quot;rearAlley&amp;quot;: null,
+                &amp;quot;rearNote&amp;quot;: null,
+                &amp;quot;generalNote&amp;quot;: null
+            },
+            &amp;quot;lotCoverage&amp;quot;: {
+                &amp;quot;min&amp;quot;: null,
+                &amp;quot;max&amp;quot;: null,
+                &amp;quot;note&amp;quot;: null
+            }
+        }],
+        &amp;quot;created&amp;quot;: &amp;quot;2016-03-27T01:20:38.188055Z&amp;quot;,
+        &amp;quot;updated&amp;quot;: &amp;quot;2016-03-27T01:20:38.188055Z&amp;quot;
+    }],
+    &amp;quot;overlays&amp;quot;: [{
+        &amp;quot;id&amp;quot;: 58,
+        &amp;quot;name&amp;quot;: &amp;quot;Coastal Height Limit Overlay Zone&amp;quot;,
+        &amp;quot;designation&amp;quot;: &amp;quot;CHLOZ&amp;quot;,
+        &amp;quot;ordinance&amp;quot;: &amp;quot;O-10960 NS&amp;quot;,
+        &amp;quot;implementationDate&amp;quot;: &amp;quot;1972-12-07T00:00:00Z&amp;quot;,
+        &amp;quot;jurisdiction&amp;quot;: {
+            &amp;quot;id&amp;quot;: 2,
+            &amp;quot;name&amp;quot;: &amp;quot;City of San Diego&amp;quot;,
+            &amp;quot;created&amp;quot;: &amp;quot;2016-03-27T01:15:32.875962Z&amp;quot;,
+            &amp;quot;updated&amp;quot;: &amp;quot;2016-03-27T01:15:32.875962Z&amp;quot;
+        },
+        &amp;quot;description&amp;quot;: &amp;quot;The purpose of the Coastal Height Limit Overlay Zone is to provide a supplemental ...&amp;quot;,
+        &amp;quot;created&amp;quot;: &amp;quot;2016-05-09T01:21:19.123113Z&amp;quot;,
+        &amp;quot;updated&amp;quot;: &amp;quot;2016-05-09T02:11:56.356377Z&amp;quot;
+    }, {
+        &amp;quot;id&amp;quot;: 148,
+        &amp;quot;name&amp;quot;: &amp;quot;Airport Influence Area&amp;quot;,
+        &amp;quot;designation&amp;quot;: &amp;quot;San Diego International Airport&amp;quot;,
+        &amp;quot;ordinance&amp;quot;: null,
+        &amp;quot;implementationDate&amp;quot;: null,
+        &amp;quot;jurisdiction&amp;quot;: {
+            &amp;quot;id&amp;quot;: 2,
+            &amp;quot;name&amp;quot;: &amp;quot;City of San Diego&amp;quot;,
+            &amp;quot;created&amp;quot;: &amp;quot;2016-03-27T01:15:32.875962Z&amp;quot;,
+            &amp;quot;updated&amp;quot;: &amp;quot;2016-03-27T01:15:32.875962Z&amp;quot;
+        },
+        &amp;quot;description&amp;quot;: null,
+        &amp;quot;created&amp;quot;: &amp;quot;2016-05-09T01:43:16.495715Z&amp;quot;,
+        &amp;quot;updated&amp;quot;: &amp;quot;2016-05-09T01:43:16.495715Z&amp;quot;
+    }]
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

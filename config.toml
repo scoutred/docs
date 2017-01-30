@@ -1,0 +1,77 @@
+baseurl = "http://docs.scoutred.com/"
+languageCode = "en-us"
+title = "ScoutRED API"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+
+[params]
+	# General information
+	author = "ScoutRED"
+	description = ""
+	copyright = ""
+
+	# Repository
+	provider = ""
+	repo_url = ""
+
+	version = ""
+	logo = ""
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+	[params.palette]
+    	primary = "red"
+    	accent  = "teal"
+
+    [params.font]
+    	text = "Ubuntu"
+    	code = "Ubuntu Mono"
+
+
+[social]
+	twitter = "scoutred_"
+	github  = "scoutred"
+	email   = "hello@scoutred.com"
+
+
+[[menu.main]]
+	name   = "Introduction"
+	url    = "/"
+	weight = 0
+
+[[menu.main]]
+	name   = "Authentication"
+	url    = "authentication/"
+	weight = 10
+
+[[menu.main]]
+	name   = "Addresses"
+	url    = "addresses/"
+	weight = 20
+
+[[menu.main]]
+	name   = "Parcels"
+	url    = "parcels/"
+	weight = 30
+
+#[[menu.main]]
+#	name   = "Permits"
+#	url    = "permits/"
+#	weight = 40
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true

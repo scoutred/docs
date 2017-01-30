@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Parcels - ScoutRED API</title>
+    <meta name="generator" content="Hugo 0.15" />
+
+    
+    <link rel="canonical" href="http://docs.scoutred.com/parcels/">
+    
+    <meta name="author" content="ScoutRED">
+    
+
+    <meta property="og:url" content="http://docs.scoutred.com/parcels/">
+    <meta property="og:title" content="ScoutRED API">
+    
+    <meta name="apple-mobile-web-app-title" content="ScoutRED API">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://docs.scoutred.com/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://docs.scoutred.com/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('http://docs.scoutred.com/fonts/icon.eot');
+        src: url('http://docs.scoutred.com/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('http://docs.scoutred.com/fonts/icon.woff')
+               format('woff'),
+             url('http://docs.scoutred.com/fonts/icon.ttf')
+               format('truetype'),
+             url('http://docs.scoutred.com/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://docs.scoutred.com/stylesheets/application.css">
+    <link rel="stylesheet" href="http://docs.scoutred.com/stylesheets/temporary.css">
+    <link rel="stylesheet" href="http://docs.scoutred.com/stylesheets/palettes.css">
+    <link rel="stylesheet" href="http://docs.scoutred.com/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="http://docs.scoutred.com/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Parcels
+      </div>
+    </div>
+
+    
+    <div class="button button-twitter" role="button" aria-label="Twitter">
+       <a href="https://twitter.com/scoutred_" title="@scoutred_ on Twitter" target="_blank" class="toggle-button icon icon-twitter"></a>
+    </div>
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/scoutred" title="@scoutred on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="http://docs.scoutred.com/" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>ScoutRED API </strong>
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Introduction" href="http://docs.scoutred.com/">
+	
+	Introduction
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Authentication" href="http://docs.scoutred.com/authentication/">
+	
+	Authentication
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Addresses" href="http://docs.scoutred.com/addresses/">
+	
+	Addresses
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Parcels" href="http://docs.scoutred.com/parcels/">
+	
+	Parcels
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+          <li>
+            <a href="https://twitter.com/scoutred_" target="_blank" title="@scoutred_ on Twitter">
+              @scoutred_ on Twitter
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://github.com/scoutred" target="_blank" title="@scoutred on GitHub">
+              @scoutred on GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:hello@scoutred.com" title="Email of hello@scoutred.com">
+              Contact via email
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Parcels </h1>
+
+			
+
+<h2 id="api-parcels-id">/api/parcels/:id</h2>
+
+<p>The <code>/api/parcels/:id</code> endpoint will return data for a parcel using the parcel&rsquo;s ScoutRED parcel ID.</p>
+
+<h3 id="http-endpiont">HTTP Endpiont</h3>
+
+<p><code>https://scoutred.com/api/parcels/:id</code></p>
+
+<h3 id="url-params">URL params</h3>
+
+<ul>
+<li><code>:id</code> - The parcel&rsquo;s ScoutRED parcel ID. The ID can be obtained using the Address Search API.</li>
+</ul>
+
+<h3 id="example-request">Example Request</h3>
+
+<pre><code class="language-bash"># GET address suggestions based on the supplied query
+$ curl -H &quot;Authorization: Bearer [token]&quot; \ 
+	-XGET https://scoutred.com/api/parcels/210502
+</code></pre>
+
+<h3 id="example-response">Example Response</h3>
+
+<pre><code class="language-json">{
+    &quot;id&quot;: 210502,
+    &quot;stateFIPS&quot;: &quot;06&quot;,
+    &quot;countyFIPS&quot;: &quot;073&quot;,
+    &quot;apn&quot;: &quot;4415811100&quot;,
+    &quot;owner&quot;: {
+        &quot;name1&quot;: &quot;REDACTED&quot;,
+        &quot;name2&quot;: null,
+        &quot;name3&quot;: null,
+        &quot;address1&quot;: &quot;REDACTED&quot;,
+        &quot;address2&quot;: &quot;REDACTED&quot;,
+        &quot;address3&quot;: null,
+        &quot;address4&quot;: null,
+        &quot;postal&quot;: &quot;REDACTED&quot; // 
+    },
+    &quot;legalDescription&quot;: &quot;BLK 1*&quot;,
+    &quot;subdivision&quot;: {
+        &quot;name&quot;: &quot;000578&quot;,
+        &quot;map&quot;: &quot;ASCHOFF MILLER \u0026 KELLYS SUB&quot;
+    },
+    &quot;assessor&quot;: {
+        &quot;land&quot;: 176769,
+        &quot;improvements&quot;: 91918
+    },
+    &quot;communityPlan&quot;: {
+        &quot;id&quot;: 48,
+        &quot;name&quot;: &quot;MIDWAY-PACIFIC HIGHWAY&quot;,
+        &quot;description&quot;: &quot;The Midway/Pacific Highway Corridor Community (e.g. Midway) is situated north of the Centre City ...&quot;,
+        &quot;references&quot;: null,
+        &quot;created&quot;: &quot;2016-04-30T01:58:46.089268Z&quot;,
+        &quot;updated&quot;: &quot;2016-05-08T20:52:41.756657Z&quot;
+    },
+    &quot;zoning&quot;: [{
+        &quot;id&quot;: 173,
+        &quot;jurisdiction&quot;: {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;City of San Diego&quot;,
+            &quot;created&quot;: &quot;2016-03-27T01:15:32.875962Z&quot;,
+            &quot;updated&quot;: &quot;2016-03-27T01:15:32.875962Z&quot;
+        },
+        &quot;designation&quot;: &quot;IS-1-1&quot;,
+        &quot;description&quot;: null,
+        &quot;regulations&quot;: [{
+            &quot;id&quot;: 114,
+            &quot;zoningId&quot;: 173,
+            &quot;lotSize&quot;: {
+                &quot;minArea&quot;: null,
+                &quot;maxArea&quot;: null,
+                &quot;minWidth&quot;: null,
+                &quot;minWidthCorner&quot;: null,
+                &quot;minFrontage&quot;: null,
+                &quot;minDepth&quot;: null
+            },
+            &quot;density&quot;: {
+                &quot;sfDu&quot;: null,
+                &quot;sfDuNote&quot;: null
+            },
+            &quot;heightLimit&quot;: {
+                &quot;max&quot;: null,
+                &quot;aboveEnclosedParking&quot;: null,
+                &quot;roofFlat&quot;: null,
+                &quot;roofPitched&quot;: null,
+                &quot;note&quot;: null
+            },
+            &quot;far&quot;: {
+                &quot;base&quot;: 2,
+                &quot;min&quot;: null,
+                &quot;max&quot;: null,
+                &quot;residential&quot;: null,
+                &quot;commercial&quot;: null,
+                &quot;mixed&quot;: null,
+                &quot;note&quot;: null
+            },
+            &quot;setbacks&quot;: {
+                &quot;frontMin&quot;: 10,
+                &quot;frontMinNote&quot;: null,
+                &quot;frontMax&quot;: null,
+                &quot;frontMaxNote&quot;: null,
+                &quot;interiorSide&quot;: null,
+                &quot;interiorSideNote&quot;: &quot;5 / 0&quot;,
+                &quot;streetSide&quot;: 10,
+                &quot;streetSideNote&quot;: null,
+                &quot;rear&quot;: 15,
+                &quot;rearAlley&quot;: null,
+                &quot;rearNote&quot;: null,
+                &quot;generalNote&quot;: null
+            },
+            &quot;lotCoverage&quot;: {
+                &quot;min&quot;: null,
+                &quot;max&quot;: null,
+                &quot;note&quot;: null
+            }
+        }],
+        &quot;created&quot;: &quot;2016-03-27T01:20:38.188055Z&quot;,
+        &quot;updated&quot;: &quot;2016-03-27T01:20:38.188055Z&quot;
+    }],
+    &quot;overlays&quot;: [{
+        &quot;id&quot;: 58,
+        &quot;name&quot;: &quot;Coastal Height Limit Overlay Zone&quot;,
+        &quot;designation&quot;: &quot;CHLOZ&quot;,
+        &quot;ordinance&quot;: &quot;O-10960 NS&quot;,
+        &quot;implementationDate&quot;: &quot;1972-12-07T00:00:00Z&quot;,
+        &quot;jurisdiction&quot;: {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;City of San Diego&quot;,
+            &quot;created&quot;: &quot;2016-03-27T01:15:32.875962Z&quot;,
+            &quot;updated&quot;: &quot;2016-03-27T01:15:32.875962Z&quot;
+        },
+        &quot;description&quot;: &quot;The purpose of the Coastal Height Limit Overlay Zone is to provide a supplemental ...&quot;,
+        &quot;created&quot;: &quot;2016-05-09T01:21:19.123113Z&quot;,
+        &quot;updated&quot;: &quot;2016-05-09T02:11:56.356377Z&quot;
+    }, {
+        &quot;id&quot;: 148,
+        &quot;name&quot;: &quot;Airport Influence Area&quot;,
+        &quot;designation&quot;: &quot;San Diego International Airport&quot;,
+        &quot;ordinance&quot;: null,
+        &quot;implementationDate&quot;: null,
+        &quot;jurisdiction&quot;: {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;City of San Diego&quot;,
+            &quot;created&quot;: &quot;2016-03-27T01:15:32.875962Z&quot;,
+            &quot;updated&quot;: &quot;2016-03-27T01:15:32.875962Z&quot;
+        },
+        &quot;description&quot;: null,
+        &quot;created&quot;: &quot;2016-05-09T01:43:16.495715Z&quot;,
+        &quot;updated&quot;: &quot;2016-05-09T01:43:16.495715Z&quot;
+    }]
+}
+</code></pre>
+
+
+			<aside class="copyright" role="note">
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="http://docs.scoutred.com/addresses/" title="Addresses">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Addresses
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '';
+      var repo_id  = '';
+    
+    </script>
+
+    <script src="http://docs.scoutred.com/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
