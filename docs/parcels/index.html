@@ -282,7 +282,7 @@
 <h3 id="url-params">URL params</h3>
 
 <ul>
-<li><code>:id</code> - The parcel&rsquo;s ScoutRED parcel ID. The ID can be obtained using the Address Search API.</li>
+<li><code>:id</code> - The parcel&rsquo;s ScoutRED parcel ID. The ID can be obtained using the <a href="http://docs.scoutred.com/addresses/#api-search-addresses">Address Search API</a>.</li>
 </ul>
 
 <h3 id="example-request">Example Request</h3>
@@ -299,6 +299,35 @@ $ curl -H &quot;Authorization: Bearer [token]&quot; \
     &quot;stateFIPS&quot;: &quot;06&quot;,
     &quot;countyFIPS&quot;: &quot;073&quot;,
     &quot;apn&quot;: &quot;4415811100&quot;,
+    &quot;address&quot;: {
+        &quot;id&quot;: 574404,
+        &quot;parcelId&quot;: 210502,
+        &quot;street&quot;: {
+            &quot;number&quot;: 3460,
+            &quot;numberFraction&quot;: null,
+            &quot;preDirection&quot;: null,
+            &quot;name&quot;: &quot;HANCOCK&quot;,
+            &quot;suffix&quot;: &quot;ST&quot;,
+            &quot;postDirection&quot;: null
+        },
+        &quot;unit&quot;: null,
+        &quot;postal&quot;: &quot;92110&quot;,
+        &quot;jurisdiction&quot;: &quot;San Diego&quot;,
+        &quot;state&quot;: &quot;CA&quot;,
+        &quot;country&quot;: &quot;USA&quot;,
+        &quot;geom&quot;: {
+            &quot;crs&quot;: {
+                &quot;type&quot;: &quot;name&quot;,
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;EPSG:4326&quot;
+                }
+            },
+            &quot;type&quot;: &quot;Point&quot;,
+            &quot;coordinates&quot;: [-117.208274119352, 32.7564461631081]
+        },
+        &quot;created&quot;: &quot;2016-05-04T03:33:51.077522Z&quot;,
+        &quot;updated&quot;: &quot;2016-07-11T23:24:34.965674Z&quot;
+    },
     &quot;owner&quot;: {
         &quot;name1&quot;: &quot;REDACTED&quot;,
         &quot;name2&quot;: null,

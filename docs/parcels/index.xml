@@ -28,7 +28,7 @@
 &lt;h3 id=&#34;url-params&#34;&gt;URL params&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;:id&lt;/code&gt; - The parcel&amp;rsquo;s ScoutRED parcel ID. The ID can be obtained using the Address Search API.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:id&lt;/code&gt; - The parcel&amp;rsquo;s ScoutRED parcel ID. The ID can be obtained using the &lt;a href=&#34;http://docs.scoutred.com/addresses/#api-search-addresses&#34;&gt;Address Search API&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;example-request&#34;&gt;Example Request&lt;/h3&gt;
@@ -45,6 +45,35 @@ $ curl -H &amp;quot;Authorization: Bearer [token]&amp;quot; \
     &amp;quot;stateFIPS&amp;quot;: &amp;quot;06&amp;quot;,
     &amp;quot;countyFIPS&amp;quot;: &amp;quot;073&amp;quot;,
     &amp;quot;apn&amp;quot;: &amp;quot;4415811100&amp;quot;,
+    &amp;quot;address&amp;quot;: {
+        &amp;quot;id&amp;quot;: 574404,
+        &amp;quot;parcelId&amp;quot;: 210502,
+        &amp;quot;street&amp;quot;: {
+            &amp;quot;number&amp;quot;: 3460,
+            &amp;quot;numberFraction&amp;quot;: null,
+            &amp;quot;preDirection&amp;quot;: null,
+            &amp;quot;name&amp;quot;: &amp;quot;HANCOCK&amp;quot;,
+            &amp;quot;suffix&amp;quot;: &amp;quot;ST&amp;quot;,
+            &amp;quot;postDirection&amp;quot;: null
+        },
+        &amp;quot;unit&amp;quot;: null,
+        &amp;quot;postal&amp;quot;: &amp;quot;92110&amp;quot;,
+        &amp;quot;jurisdiction&amp;quot;: &amp;quot;San Diego&amp;quot;,
+        &amp;quot;state&amp;quot;: &amp;quot;CA&amp;quot;,
+        &amp;quot;country&amp;quot;: &amp;quot;USA&amp;quot;,
+        &amp;quot;geom&amp;quot;: {
+            &amp;quot;crs&amp;quot;: {
+                &amp;quot;type&amp;quot;: &amp;quot;name&amp;quot;,
+                &amp;quot;properties&amp;quot;: {
+                    &amp;quot;name&amp;quot;: &amp;quot;EPSG:4326&amp;quot;
+                }
+            },
+            &amp;quot;type&amp;quot;: &amp;quot;Point&amp;quot;,
+            &amp;quot;coordinates&amp;quot;: [-117.208274119352, 32.7564461631081]
+        },
+        &amp;quot;created&amp;quot;: &amp;quot;2016-05-04T03:33:51.077522Z&amp;quot;,
+        &amp;quot;updated&amp;quot;: &amp;quot;2016-07-11T23:24:34.965674Z&amp;quot;
+    },
     &amp;quot;owner&amp;quot;: {
         &amp;quot;name1&amp;quot;: &amp;quot;REDACTED&amp;quot;,
         &amp;quot;name2&amp;quot;: null,

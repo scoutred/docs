@@ -14,7 +14,7 @@ The `/api/parcels/:id` endpoint will return data for a parcel using the parcel's
 
 ### URL params
 
-* `:id` - The parcel's ScoutRED parcel ID. The ID can be obtained using the Address Search API.
+* `:id` - The parcel's ScoutRED parcel ID. The ID can be obtained using the [Address Search API](/addresses/#api-search-addresses).
 
 ### Example Request
 
@@ -32,6 +32,35 @@ $ curl -H "Authorization: Bearer [token]" \
 	"stateFIPS": "06",
 	"countyFIPS": "073",
 	"apn": "4415811100",
+	"address": {
+		"id": 574404,
+		"parcelId": 210502,
+		"street": {
+			"number": 3460,
+			"numberFraction": null,
+			"preDirection": null,
+			"name": "HANCOCK",
+			"suffix": "ST",
+			"postDirection": null
+		},
+		"unit": null,
+		"postal": "92110",
+		"jurisdiction": "San Diego",
+		"state": "CA",
+		"country": "USA",
+		"geom": {
+			"crs": {
+				"type": "name",
+				"properties": {
+					"name": "EPSG:4326"
+				}
+			},
+			"type": "Point",
+			"coordinates": [-117.208274119352, 32.7564461631081]
+		},
+		"created": "2016-05-04T03:33:51.077522Z",
+		"updated": "2016-07-11T23:24:34.965674Z"
+	},
 	"owner": {
 		"name1": "REDACTED",
 		"name2": null,
