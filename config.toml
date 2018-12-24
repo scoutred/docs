@@ -1,26 +1,26 @@
 baseurl = "http://docs.scoutred.com/"
 languageCode = "en-us"
-title = "ScoutRED API"
+title = "Scoutred API"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
 # Enable Google Analytics by entering your tracking id
-googleAnalytics = ""
+googleAnalytics = "UA-51537973-4"
 publishDir = "docs"
 
 [params]
 	# General information
-	author = "ScoutRED"
-	description = ""
+	author = "Scoutred"
+	description = "Scoutred API developer documentation"
 	copyright = ""
 
 	# Repository
 	provider = ""
-	repo_url = ""
+	repo_url = "https://github.com/scoutred/docs"
 
-	version = ""
-	logo = ""
-	favicon = ""
+	version = "v1"
+	logo = "images/scoutred-icon.svg"
+	favicon = "https://scoutred.com/static/shortcut-icons/favicon.ico"
 
 	permalink = "#"
 
@@ -32,47 +32,56 @@ publishDir = "docs"
 	highlight_css  = ""
 
 	[params.palette]
-    	primary = "red"
-    	accent  = "teal"
+	primary = "blue-grey"
+	accent  = "teal"
 
     [params.font]
-    	text = "Ubuntu"
-    	code = "Ubuntu Mono"
-
+	text = "Ubuntu"
+	code = "Ubuntu Mono"
 
 [social]
-	twitter = "scoutred_"
-	github  = "scoutred"
-	email   = "hello@scoutred.com"
+twitter = "scoutred_"
+github  = "scoutred"
+email   = "hello@scoutred.com"
 
 
 [[menu.main]]
-	name   = "Introduction"
-	url    = "/"
-	weight = 0
+name   = "Introduction"
+url    = "/"
+weight = 1
 
 [[menu.main]]
-	name   = "Authentication"
-	url    = "authentication/"
-	weight = 10
+name   = "Authentication"
+url    = "authentication/"
+weight = 10
 
 [[menu.main]]
-	name   = "Addresses"
-	url    = "addresses/"
-	weight = 20
+name   = "Addresses"
+url    = "addresses/"
+weight = 20
 
 [[menu.main]]
-	name   = "Parcels"
-	url    = "parcels/"
-	weight = 30
+name   = "Community Plans"
+url    = "community_plans/"
+weight = 30
 
-#[[menu.main]]
-#	name   = "Permits"
-#	url    = "permits/"
-#	weight = 40
+[[menu.main]]
+name   = "Overlays"
+url    = "overlays/"
+weight = 40
+
+[[menu.main]]
+name   = "Parcels"
+url    = "parcels/"
+weight = 50
+
+[[menu.main]]
+name   = "Zoning"
+url    = "zoning/"
+weight = 60
 
 [blackfriday]
-	smartypants	= true
-	fractions = true
-	smartDashes = true
-	plainIDAnchors = true
+smartypants	= true
+fractions = true
+smartDashes = true
+plainIDAnchors = true

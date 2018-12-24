@@ -1,0 +1,73 @@
+---
+date: 2018-12-23T19:56:50+01:00
+title: Zoning
+---
+
+## Example Resource
+
+```json
+{
+    "id": 173,
+    "jurisdiction": {
+        "id": 2,
+        "name": "City of San Diego",
+        "created": "2016-03-27T01:15:32.875962Z",
+        "updated": "2016-03-27T01:15:32.875962Z"
+    },
+    "designation": "IS-1-1",
+    "description": null,
+    "regulations": [{
+        "id": 114,
+        "zoningId": 173,
+        "lotSize": {
+            "minArea": null,
+            "maxArea": null,
+            "minWidth": null,
+            "minWidthCorner": null,
+            "minFrontage": null,
+            "minDepth": null
+        },
+        "density": {
+            "sfDu": null,
+            "sfDuNote": null
+        },
+        "heightLimit": {
+            "max": null,
+            "aboveEnclosedParking": null,
+            "roofFlat": null,
+            "roofPitched": null,
+            "note": null
+        },
+        "far": {
+            "base": 2,
+            "min": null,
+            "max": null,
+            "residential": null,
+            "commercial": null,
+            "mixed": null,
+            "note": null
+        },
+        "setbacks": {
+            "frontMin": 10,
+            "frontMinNote": null,
+            "frontMax": null,
+            "frontMaxNote": null,
+            "interiorSide": null,
+            "interiorSideNote": "5 / 0",
+            "streetSide": 10,
+            "streetSideNote": null,
+            "rear": 15,
+            "rearAlley": null,
+            "rearNote": null,
+            "generalNote": null
+        },
+        "lotCoverage": {
+            "min": null,
+            "max": null,
+            "note": null
+        }
+    }],
+    "created": "2016-03-27T01:20:38.188055Z",
+    "updated": "2016-03-27T01:20:38.188055Z"
+}
+```

@@ -1,5 +1,5 @@
-# docs
-ScoutRED API docs
+# Scoutred API Documentation
+Scoutred API docs
 
 ## Local dev
 
