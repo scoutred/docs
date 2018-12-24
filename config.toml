@@ -1,4 +1,4 @@
-baseurl = "http://docs.scoutred.com/"
+baseurl = "https://docs.scoutred.com/"
 languageCode = "en-us"
 title = "Scoutred API"
 theme = "hugo-material-docs"
