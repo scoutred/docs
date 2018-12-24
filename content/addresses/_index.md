@@ -1,6 +1,7 @@
 ---
 date: 2017-01-26T19:56:50+01:00
 title: Addresses
+weight: 10
 ---
 
 ## /api/search/addresses
