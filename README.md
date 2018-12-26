@@ -1,5 +1,9 @@
 # Scoutred API Documentation
-Scoutred API docs
+Scoutred Developer API docs located at https://docs.scoutred.com.
+
+## Contributing
+
+If you find an error or have an improvement please send in a pull request. 
 
 ## Local dev
 
@@ -7,4 +11,4 @@ Navigate to the repo root and run `hugo server`. Hugo will output where to navig
 
 ## Building
 
-To build the docs run `hugo -d docs`. This will build the statis site to the `docs/` folder. After the build is compelete, commit the changes and push the docs to Github. Docs can be accessed at http://docs.scoutred.com
+Docs are built and deployed with the CI / CD pipeline. Any commit to master and pushed to Github will kickoff this process.

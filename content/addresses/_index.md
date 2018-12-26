@@ -8,7 +8,7 @@ weight: 10
 
 The `/api/search/addresses` endpoint will suggest addresses based on a provided query string. Also works with Assessor Parcel Numbers (APNs).
 
-### HTTP Endpiont
+### HTTP Endpoint
 
 `https://scoutred.com/api/search/addresses`
 

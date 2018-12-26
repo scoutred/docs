@@ -7,7 +7,7 @@ title: Parcels
 
 The `/api/parcels/:id` endpoint will return data for a parcel using the parcel's Scoutred parcel ID.
 
-### HTTP Endpiont
+### HTTP Endpoint
 
 `https://scoutred.com/api/parcels/:id`
 
@@ -27,7 +27,7 @@ $ curl -H "Authorization: Bearer [token]" \
 
 The `/api/parcels` allows for querying all the parcels in the system using query string combinations. All responses will be wrapped in an array as more than one record can be returned.
 
-### HTTP Endpiont
+### HTTP Endpoint
 
 `https://scoutred.com/api/parcels`
 
