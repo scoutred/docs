@@ -3,13 +3,13 @@ date: 2018-12-23
 title: Community Plans
 ---
 
-## /api/community-plan/:id
+## /api/community-plans/:id
 
 The `/api/community-plan/:id` endpoint will return data for a community plan using the community plan's Scoutred ID.
 
 ### HTTP Endpoint
 
-`https://scoutred.com/api/community-plan/:id`
+`https://scoutred.com/api/community-plans/:id`
 
 ### URL params
 
@@ -20,7 +20,7 @@ The `/api/community-plan/:id` endpoint will return data for a community plan usi
 ```bash
 # GET address suggestions based on the supplied query
 $ curl -H "Authorization: Bearer [token]" \ 
-    -XGET https://scoutred.com/api/community-plan/210502
+    -XGET https://scoutred.com/api/community-plans/210502
 ```
 
 
