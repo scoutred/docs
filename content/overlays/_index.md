@@ -3,6 +3,26 @@ date: 2018-12-23
 title: Overlays
 ---
 
+## /api/overlays/:id
+
+The `/api/overlays/:id` endpoint will return data for an overlay using the overlays's Scoutred ID.
+
+### HTTP Endpoint
+
+`https://scoutred.com/api/overlays/:id`
+
+### URL params
+
+* `:id` - The Scoutred overlay ID.
+
+### Example Request
+
+```bash
+# GET address suggestions based on the supplied query
+$ curl -H "Authorization: Bearer [token]" \ 
+    -XGET https://scoutred.com/api/overlays/210502
+```
+
 ## Example Resource
 
 ```json

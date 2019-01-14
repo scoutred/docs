@@ -3,6 +3,48 @@ date: 2018-12-23T19:56:50+01:00
 title: Zoning
 ---
 
+## /api/zoning
+
+The `/api/zoning` endpoint allows for querying all the zoning records using query string combinations.
+
+### HTTP Endpoint
+
+`https://scoutred.com/api/zoning`
+
+### Query String Parameters
+
+* `lon` - The longitude value to combine with the `lat` query string.
+* `lat` - The latitude value to combine with the `lon` query string.
+
+### Example Request
+
+```bash
+# GET parcels based on supplied lattitude and longitude values
+$ curl -H "Authorization: Bearer [token]" \
+    -XGET https://scoutred.com/api/zoning?lat=32.952645&lon=-117.235974
+```
+
+## /api/zoning/:id
+
+The `/api/zoning/:id` endpoint will return zoning data using the a Scoutred zoning ID.
+
+### HTTP Endpoint
+
+`https://scoutred.com/api/zoning/:id`
+
+### URL params
+
+* `:id` - The Scoutred zoning ID
+
+### Example Request
+
+```bash
+# GET address suggestions based on the supplied query
+$ curl -H "Authorization: Bearer [token]" \ 
+    -XGET https://scoutred.com/api/zoning/210502
+```
+
+
 ## Example Resource
 
 ```json

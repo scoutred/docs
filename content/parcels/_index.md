@@ -3,26 +3,6 @@ date: 2018-12-23T19:56:50+01:00
 title: Parcels
 ---
 
-## /api/parcels/:id
-
-The `/api/parcels/:id` endpoint will return data for a parcel using the parcel's Scoutred parcel ID.
-
-### HTTP Endpoint
-
-`https://scoutred.com/api/parcels/:id`
-
-### URL params
-
-* `:id` - The parcel's Scoutred parcel ID. The ID can be obtained using the [Address Search API](/addresses/#api-search-addresses).
-
-### Example Request
-
-```bash
-# GET address suggestions based on the supplied query
-$ curl -H "Authorization: Bearer [token]" \ 
-	-XGET https://scoutred.com/api/parcels/210502
-```
-
 ## /api/parcels
 
 The `/api/parcels` allows for querying all the parcels in the system using query string combinations. All responses will be wrapped in an array as more than one record can be returned.
@@ -41,7 +21,27 @@ The `/api/parcels` allows for querying all the parcels in the system using query
 ```bash
 # GET parcels based on supplied lattitude and longitude values
 $ curl -H "Authorization: Bearer [token]" \
-	-XGET https://scoutred.com/api/parcels?lat=32.952645&lon=-117.235974
+    -XGET https://scoutred.com/api/parcels?lat=32.952645&lon=-117.235974
+```
+
+## /api/parcels/:id
+
+The `/api/parcels/:id` endpoint will return data for a parcel using the parcel's Scoutred parcel ID.
+
+### HTTP Endpoint
+
+`https://scoutred.com/api/parcels/:id`
+
+### URL params
+
+* `:id` - The parcel's Scoutred parcel ID. The ID can be obtained using the [Address Search API](/addresses/#api-search-addresses).
+
+### Example Request
+
+```bash
+# GET address suggestions based on the supplied query
+$ curl -H "Authorization: Bearer [token]" \ 
+	-XGET https://scoutred.com/api/parcels/210502
 ```
 
 
