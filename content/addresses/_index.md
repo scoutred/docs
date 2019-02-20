@@ -54,24 +54,24 @@ $ curl -H "Authorization: Bearer [token]" \
 
 ## Schema
 
-| Name                  	| Type    	| Description                                                                 	|
-|-----------------------	|---------	|-----------------------------------------------------------------------------	|
-| id                    	| integer 	| Scoutred address ID                                                         	|
-| parcelId              	| integer 	| The id of the parcel the address is associated with                         	|
-| apn                   	| string  	| The unformatted Assessor Parcel Number (APN)                                	|
-| apnFmt                	| string  	| The formatted Assessor Parcel Number (APN)                                  	|
-| full                  	| string  	| A single line formatted version of the street attributes                    	|
-| street                	| object  	| Various attributes which make up the street                                 	|
-| street.number         	| integer 	| The street number                                                           	|
-| street.numberFraction 	| string  	| The street number fraction if applicable                                    	|
-| street.preDirection   	| string  	| The street pre direction (i.e. N, S, E, W) if applicable.                   	|
-| street.name           	| string  	| The name of the street                                                      	|
-| street.suffix         	| string  	| The string suffix (i.e. Ave, St, Dr.)                                       	|
-| street.postDirection  	| string  	| The street pre direction (i.e. N, S, E, W) if applicable.                   	|
-| unit                  	| string  	| The address unit. Applicable to condos.                                     	|
-| postal                	| string  	| The postal (zip) code for the address.                                      	|
-| jurisdiction          	| string  	| The jurisdiction for the address                                            	|
-| state                 	| string  	| The two letter representation of the state the address resides in (i.e. CA) 	|
-| country               	| string  	| The country the address resides in (i.e. USA)                               	|
-| created               	| string  	| A RFC3339 timestamp for record creation.                                    	|
-| modified              	| string  	| A RFC3339 timestamp for record modification.                                	|
+| Name                  	| Type    	| Description                                                                 	       |
+|-----------------------	|---------	|-----------------------------------------------------------------------------------   |
+| id                    	| integer 	| Scoutred address ID                                                         	       |
+| parcelId              	| integer 	| The Scoutred parcel ID. Used for making [parcel requests](/parcels/#api-parcels-id). |
+| apn                   	| string  	| The unformatted Assessor Parcel Number (APN)                                         |
+| apnFmt                	| string  	| The formatted Assessor Parcel Number (APN)                                           |
+| full                  	| string  	| A single line formatted version of the street attributes                             |
+| street                	| object  	| Various attributes which make up the street                                          |
+| street.number         	| integer 	| The street number                                                                    |
+| street.numberFraction 	| string  	| The street number fraction if applicable                                             |
+| street.preDirection   	| string  	| The street pre direction (i.e. N, S, E, W) if applicable.                            |
+| street.name           	| string  	| The name of the street                                                               |
+| street.suffix         	| string  	| The string suffix (i.e. Ave, St, Dr.)                                                |
+| street.postDirection  	| string  	| The street pre direction (i.e. N, S, E, W) if applicable.                            |
+| unit                  	| string  	| The address unit. Applicable to condos.                                              |
+| postal                	| string  	| The postal (zip) code for the address.                                               |
+| jurisdiction          	| string  	| The jurisdiction for the address                                                     |
+| state                 	| string  	| The two letter representation of the state the address resides in (i.e. CA) 	       |
+| country               	| string  	| The country the address resides in (i.e. USA)                                        |
+| created               	| string  	| A RFC3339 timestamp for record creation.                                    	       |
+| modified              	| string  	| A RFC3339 timestamp for record modification.                                         |
