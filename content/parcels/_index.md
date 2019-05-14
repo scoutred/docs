@@ -47,7 +47,7 @@ $ curl -H "Authorization: Bearer [token]" \
 
 ## Example Resource
 
-```json
+```javascript
 {
     "id": 210502,
     "stateFIPS": "06",
@@ -90,7 +90,7 @@ $ curl -H "Authorization: Bearer [token]" \
         "address2": "REDACTED",
         "address3": null,
         "address4": null,
-        "postal": "REDACTED" // 
+        "postal": "REDACTED"  
     },
     "legalDescription": "BLK 1*",
     "subdivision": {
@@ -101,8 +101,18 @@ $ curl -H "Authorization: Bearer [token]" \
         "land": 176769,
         "improvements": 91918
     },
+    "structure":{
+        "effectiveYearBuilt": 1908,
+        "livingSF": 1036,
+        "usableSF": 6200,
+        "units": 1,
+        "bedrooms": 3,
+        "bathrooms": 2
+    },
+    "geomArea": 1231.12, // area of the geometry in square feet
     "communityPlan": {...communityPlan resource...},
     "zoning": [...zoning resources...],
-    "overlays": [... overlays resources...]
+    "overlays": [... overlays resources...],
+    "permits": [... permits resource ...]
 }
 ```

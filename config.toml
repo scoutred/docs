@@ -76,9 +76,14 @@ url    = "parcels/"
 weight = 50
 
 [[menu.main]]
+name   = "Permits"
+url    = "permits/"
+weight = 60
+
+[[menu.main]]
 name   = "Zoning"
 url    = "zoning/"
-weight = 60
+weight = 70
 
 [blackfriday]
 smartypants	= true
