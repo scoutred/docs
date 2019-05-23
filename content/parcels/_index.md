@@ -94,8 +94,8 @@ $ curl -H "Authorization: Bearer [token]" \
     },
     "legalDescription": "BLK 1*",
     "subdivision": {
-        "name": "000578",
-        "map": "ASCHOFF MILLER \u0026 KELLYS SUB"
+        "name": "ASCHOFF MILLER \u0026 KELLYS SUB",
+        "map": "000578"
     },
     "assessor": {
         "land": 176769,
