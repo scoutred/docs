@@ -21,7 +21,7 @@ The `/api/parcels` allows for querying all the parcels in the system using query
 ```bash
 # GET parcels based on supplied lattitude and longitude values
 $ curl -H "Authorization: Bearer [token]" \
-    -XGET https://scoutred.com/api/parcels?lat=32.952645&lon=-117.235974
+    -XGET 'https://scoutred.com/api/parcels?lat=32.952645&lon=-117.235974'
 ```
 
 ## /api/parcels/:id
