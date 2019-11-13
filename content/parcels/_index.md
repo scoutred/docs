@@ -11,6 +11,8 @@ The `/api/parcels` allows for querying all the parcels in the system using query
 
 `https://scoutred.com/api/parcels`
 
+The endpoint provides a way to query for parcels using various parameters. The response will always be an array of 0 or more parcel resources.
+
 ### Query String Parameters
 
 * `lon` - The longitude value to combine with the `lat` query string.
@@ -19,7 +21,7 @@ The `/api/parcels` allows for querying all the parcels in the system using query
 ### Example Request
 
 ```bash
-# GET parcels based on supplied lattitude and longitude values
+# GET parcels based on supplied latitude and longitude values
 $ curl -H "Authorization: Bearer [token]" \
     -XGET 'https://scoutred.com/api/parcels?lat=32.952645&lon=-117.235974'
 ```
@@ -39,9 +41,73 @@ The `/api/parcels/:id` endpoint will return data for a parcel using the parcel's
 ### Example Request
 
 ```bash
-# GET address suggestions based on the supplied query
 $ curl -H "Authorization: Bearer [token]" \ 
 	-XGET https://scoutred.com/api/parcels/210502
+```
+
+
+## /api/parcels/:id/dimensions
+
+The endpoint will return GeoJSON of the parcel's lot line dimensions. The response GeoJSON will be a FeatureCollection with an individual feature for each parcel lot line segment. Each feature's `properties` object contains the key `lineLengthFt` which contains the length of the line segment in feet.
+
+**Note**: This endpoint is experimental. Parcel line segments may have undesirable values. Please use with caution. 
+
+### HTTP Endpoint
+
+`https://scoutred.com/api/parcels/:id/dimensions`
+
+### URL params
+
+* `:id` - The parcel's Scoutred parcel ID. The ID can be obtained using the [Address Search API](/addresses/#api-search-addresses).
+
+### Example Request
+
+```bash
+$ curl -H "Authorization: Bearer [token]" \
+    -XGET https://scoutred.com/api/parcels/210502/dimensions
+```
+
+### Example Response
+
+```javascript
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -117.14405,
+            32.743459
+          ],
+          [
+            -117.144261,
+            32.743455
+          ]
+        ]
+      },
+      "properties": {
+        "linelengthft": 65.06
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-117.144261, 32.743455],
+          [-117.144261, 32.743483]
+        ]
+      },
+      "properties": {
+        "linelengthft": 10.01
+      }
+    }
+  ]
+}
+
 ```
 
 

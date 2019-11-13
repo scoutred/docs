@@ -25,7 +25,7 @@ $ curl -H "Authorization: Bearer [token]" \
 ```
 
 ### Example Response
-```json
+```javascript
 [
     {
         "id": 843970,
@@ -46,6 +46,10 @@ $ curl -H "Authorization: Bearer [token]" \
         "jurisdiction": "San Diego",
         "state": "CA",
         "country": "USA",
+        "geom": {
+            "type":"Point",
+            "coordinates": [-117.144261, 32.743483]
+        },
         "created": "2016-05-04T03:33:51.077522Z",
         "updated": "2016-07-11T23:24:34.965674Z"
     }
@@ -72,6 +76,7 @@ $ curl -H "Authorization: Bearer [token]" \
 | postal                	| string  	| The postal (zip) code for the address.                                               |
 | jurisdiction          	| string  	| The jurisdiction for the address                                                     |
 | state                 	| string  	| The two letter representation of the state the address resides in (i.e. CA) 	       |
+| geom                      | object    | GeoJSON Point feature with the longitude and latitude of the address.                |
 | country               	| string  	| The country the address resides in (i.e. USA)                                        |
 | created               	| string  	| A RFC3339 timestamp for record creation.                                    	       |
 | modified              	| string  	| A RFC3339 timestamp for record modification.                                         |
