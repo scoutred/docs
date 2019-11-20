@@ -34,9 +34,13 @@ The `/api/parcels/:id` endpoint will return data for a parcel using the parcel's
 
 `https://scoutred.com/api/parcels/:id`
 
-### URL params
+### URL parameters
 
 * `:id` - The parcel's Scoutred parcel ID. The ID can be obtained using the [Address Search API](/addresses/#api-search-addresses).
+
+### Query parameters
+
+* `address_id` - The ID of the address to return as the parcel's address. This is useful when a parcel has more than a single address associated with it and an user found the address via the Address Search API. The value for `address_id` is the `id` field returned by the [Address Search API](/addresses/#api-search-addresses).
 
 ### Example Request
 
@@ -56,7 +60,7 @@ The endpoint will return GeoJSON of the parcel's lot line dimensions. The respon
 
 `https://scoutred.com/api/parcels/:id/dimensions`
 
-### URL params
+### URL parameters
 
 * `:id` - The parcel's Scoutred parcel ID. The ID can be obtained using the [Address Search API](/addresses/#api-search-addresses).
 
