@@ -93,7 +93,8 @@ $ curl -H "Authorization: Bearer [token]" \
         ]
       },
       "properties": {
-        "linelengthft": 65.06
+        "lengthFt": 65.06,
+        "unlocked": true // if false lengthFt is redacted
       }
     },
     {
@@ -106,7 +107,8 @@ $ curl -H "Authorization: Bearer [token]" \
         ]
       },
       "properties": {
-        "linelengthft": 10.01
+        "lengthFt": -1.0,
+        "unlocked": false // if false lengthFt is redacted
       }
     }
   ]
@@ -153,14 +155,14 @@ $ curl -H "Authorization: Bearer [token]" \
         "updated": "2016-07-11T23:24:34.965674Z"
     },
     "owner": {
-        "name1": "REDACTED",
-        "name2": null,
-        "name3": null,
-        "address1": "REDACTED",
-        "address2": "REDACTED",
-        "address3": null,
-        "address4": null,
-        "postal": "REDACTED"  
+        "name1": "LOCKED",
+        "name2": "LOCKED",
+        "name3": "LOCKED",
+        "address1": "LOCKED",
+        "address2": "LOCKED",
+        "address3": "LOCKED",
+        "address4": "LOCKED",
+        "postal": "LOCKED"  
     },
     "legalDescription": "BLK 1*",
     "subdivision": {
@@ -179,10 +181,29 @@ $ curl -H "Authorization: Bearer [token]" \
         "bedrooms": 3,
         "bathrooms": 2
     },
-    "geomArea": 1231.12, // area of the geometry in square feet
-    "communityPlan": {...communityPlan resource...},
-    "zoning": [...zoning resources...],
-    "overlays": [... overlays resources...],
-    "permits": [... permits resource ...]
+   "lotSizeSF" : 1231,   // the lot size in square feet
+   "lotSizeAcre": 0.028, // the lot size in acre
+   "geomArea": 1231.0,   // area of the geometry in square feet (deprecated, use lotSizeSF)
+   "communityPlan": {...communityPlan resource...},
+   "zoning": [...zoning resources...],
+   "overlays": [... overlays resources...],
+   "permits": [... permits resource ...]
+   "bounds": {
+      "type": "Polygon",
+      "coordinates": [
+         [
+            [-117.180183060805, 32.6963180459813],
+            [-117.180183060805, 32.7305263087481],
+            [-117.147086641189, 32.7305263087481],
+            [-117.147086641189, 32.6963180459813],
+            [-117.180183060805, 32.6963180459813]
+         ]
+      ]
+   },
+   "geohash" : "",
+   "created": "2016-05-04T03:33:51.077522Z",
+   "updated": "2016-07-11T23:24:34.965674Z",
+   "unlocked": false, // if false owner information is redacted
+   "collection": [... collecitons resource ...]
 }
 ```
