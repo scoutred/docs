@@ -182,7 +182,7 @@ $ curl -H "Authorization: Bearer [token]" \
         "bathrooms": 2
     },
    "lotSizeSF" : 1231,   // the lot size in square feet
-   "lotSizeAcre": 0.028, // the lot size in acre
+   "lotSizeAcres": 0.028, // the lot size in acres
    "geomArea": 1231.0,   // area of the geometry in square feet (deprecated, use lotSizeSF)
    "communityPlan": {...communityPlan resource...},
    "zoning": [...zoning resources...],
