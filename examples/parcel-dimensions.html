@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Scoutred Parcel Dimensions Style Example</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	const scoutredToken = 'your scoutred token goes here';
+
+	const map = new mapboxgl.Map({
+		container: 'map',
+		hash: true,
+		style: 'https://styles.scoutred.com/v2/scoutred.json',
+		center: [-117.17081, 32.741892],
+		zoom: 17.39
+	});
+
+	const loadParcelDimensions = (parcelId)=>{
+		map.getSource('dimensions').setData(`https://scoutred.com/api/parcels/${parcelId}/dimensions?token=${scoutredToken}`)
+	}
+
+	const makeFeatureActive = (feature)=>{
+		// if there is a previously active feature, remove it's active state
+		if (lastActiveFeature){
+			map.setFeatureState(lastActiveFeature, {state:null})
+		}
+
+		// set the feature state to active to trigger the scoutred parcel active style
+		map.setFeatureState(feature, {state:'active'})
+
+		lastActiveFeature = feature
+	}
+
+	let lastActiveFeature = null
+
+	map.on('click', (e)=>{
+		// set options.layers to control which layers to query (https://docs.mapbox.com/mapbox-gl-js/api/map/#map#queryrenderedfeatures)
+		const options = {
+			layers: ['parcels'] 
+		};
+
+		const features = map.queryRenderedFeatures(e.point, options);
+		if (features && features.length > 0){ 
+			const feature = features[0]
+
+			// TODO: handle multiple features
+
+			if (feature.properties && feature.properties.resource_id){
+				loadParcelDimensions(feature.properties.resource_id)
+				makeFeatureActive(feature)
+			}
+		}
+	});
+
+	// prompt the user to click on parcels
+	alert('Click on parcels to see their dimensions. Note: you must have a Scoutred subscription to see the dimensions.')
+</script>
+</body>
+</html>
