@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Scoutred Parcel Hover Example</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+  const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'https://styles.scoutred.com/v2/scoutred.json',
+      center: [-117.0793,32.7056],
+      zoom: 16
+  });
+  // track the active parcelId
+  var activeParcelId = null;
+
+  map.on('load', function () {
+
+      // When the user moves their mouse over the parcels layer, we'll update the
+      // feature state for the feature under the mouse.
+      map.on('mousemove', 'parcels', function(e) {
+        // check if we currently have a hover
+        if (activeParcelId) {
+          // remove the hover effect
+          map.removeFeatureState(
+            {source:'scoutred', sourceLayer:'parcels', id: activeParcelId}
+          );
+
+          activeParcelId = null;
+        }
+
+        // query the map for rendered features we're interested in building
+        // the hover effect around
+        var features = map.queryRenderedFeatures(e.point, {layers: ['parcels']});
+      
+        // check if we have any features to operate on
+        if (features.length === 0) {
+          return;
+        }
+
+        // set the hover state on the target parcel
+        map.setFeatureState(
+          // for the sake of simplicty, let's only operate on the first feature
+          {source:'scoutred', sourceLayer:'parcels', id: features[0].id}, 
+          {state:'hover'}
+        );
+
+        // track our active parcelId
+        activeParcelId = features[0].id;
+      });
+
+      // When the mouse leaves the parcels layer, update the feature state of the
+      // previously hovered feature.
+      map.on('mouseleave', 'parcels', function() {
+        if (activeParcelId) {
+          map.removeFeatureState(
+            {source:'scoutred', sourceLayer:'parcels', id: activeParcelId}
+          );
+        }
+
+        activeParcelId =  null;
+      });
+  });
+
+</script>
+
+</body>
+</html>
