@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Scoutred Address and Parcel Search Example</title>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+		</style>
+		<link rel="stylesheet" href="./lib/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+		<script src="./lib/axios/0.21.1/axios.min.js"></script>
+	</head>
+	<body>
+		<script>
+			const scoutredToken = 'your scoutred token goes here';
+
+			// wait for the document to load
+			document.addEventListener('DOMContentLoaded', function() {
+				// references to target elements
+				let searchEl = document.getElementById('search');
+				let outputEl = document.getElementById('output');
+
+				// and add an event listener to run on every keystroke
+				searchEl.addEventListener('keyup', function(e){
+					axios.get('https://scoutred.com/api/search/addresses', {
+						params: {
+							q: searchEl.value
+						}
+					})	
+					.then(function (response) {
+						let formattedJSON = JSON.stringify(response.data, null, 4);
+
+						outputEl.innerHTML = formattedJSON;
+					})
+					.catch(function (error) {
+						alert(error);
+					})
+
+				});
+			});
+		</script>
+		<div class="container">
+			<h1>Scoutred: address search example</h1>
+			<form>
+				<div class="form-group">
+					<label for="search">Input address or APN to search for</label>
+					<input id="search" class="form-control input-lg" type="search" placeholder="Search for address or APN"></input>
+				</div>				
+				<div>
+					<pre id="output">
+						Output will display here.
+					</pre>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
