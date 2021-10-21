@@ -6,6 +6,9 @@
 	color: rgba(0, 0, 0, 0.8) !important;
 }
 
+.highlight pre {
+    background-color: #eee !important;
+}
 
 /*	
 	HIGHLIGHT.JS THEME 
@@ -14,14 +17,13 @@
 */
 
 .hljs {
-display:block;
-overflow-x:auto;
+	display:block;
+	overflow-x:auto;
 }
 
-.hljs-comment,
-.hljs-quote {
-color:#998;
-font-style:italic;
+.hljs-comment, .hljs-quote {
+	color:#998;
+	font-style:italic;
 }
 
 .hljs-keyword,

@@ -41,7 +41,7 @@ The `/api/zoning/:id` endpoint will return zoning data using the a Scoutred zoni
 ```bash
 # GET address suggestions based on the supplied query
 $ curl -H "Authorization: Bearer [token]" \ 
-    -XGET https://scoutred.com/api/zoning/210502
+    -XGET https://scoutred.com/api/zoning/183
 ```
 
 
@@ -49,18 +49,62 @@ $ curl -H "Authorization: Bearer [token]" \
 
 ```json
 {
-    "id": 173,
+    "id": 183,
     "jurisdiction": {
         "id": 2,
         "name": "City of San Diego",
         "created": "2016-03-27T01:15:32.875962Z",
         "updated": "2016-03-27T01:15:32.875962Z"
     },
-    "designation": "IS-1-1",
-    "description": null,
+    "designation": "RM-1-1",
+    "description": "The purpose of the RM zones is to provide for multiple dwelling unit development at varying densities. The RM zones individually accommodate developments with similar densities and characteristics. Each of the RM zones is intended to establish development criteria that consolidates common development regulations, accommodates specific dwelling types, and responds to locational issues regarding adjacent land uses.",
+    "bounds": {
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "EPSG:4326"
+            }
+        },
+        "bbox": [
+            -117.28151,
+            32.54543,
+            -117.00632,
+            33.05589
+        ],
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -117.28151,
+                    32.54543
+                ],
+                [
+                    -117.28151,
+                    33.05589
+                ],
+                [
+                    -117.00632,
+                    33.05589
+                ],
+                [
+                    -117.00632,
+                    32.54543
+                ],
+                [
+                    -117.28151,
+                    32.54543
+                ]
+            ]
+        ]
+    },
+    "use": {
+        "primary": "residential",
+        "secondary": "multi family"
+    },
+    "geohash": "9mudw74msyxf3jew8kbu",
     "regulations": [{
-        "id": 114,
-        "zoningId": 173,
+        "id": 187,
+        "zoningId": 183,
         "lotSize": {
             "minArea": null,
             "maxArea": null,
@@ -70,18 +114,18 @@ $ curl -H "Authorization: Bearer [token]" \
             "minDepth": null
         },
         "density": {
-            "sfDu": null,
+            "sfDu": 3000,
             "sfDuNote": null
         },
         "heightLimit": {
-            "max": null,
+            "max": 30,
             "aboveEnclosedParking": null,
             "roofFlat": null,
             "roofPitched": null,
             "note": null
         },
         "far": {
-            "base": 2,
+            "base": 0.75,
             "min": null,
             "max": null,
             "residential": null,
@@ -90,12 +134,12 @@ $ curl -H "Authorization: Bearer [token]" \
             "note": null
         },
         "setbacks": {
-            "frontMin": 10,
+            "frontMin": 15,
             "frontMinNote": null,
             "frontMax": null,
             "frontMaxNote": null,
-            "interiorSide": null,
-            "interiorSideNote": "5 / 0",
+            "interiorSide": 5,
+            "interiorSideNote": null,
             "streetSide": 10,
             "streetSideNote": null,
             "rear": 15,
@@ -109,7 +153,35 @@ $ curl -H "Authorization: Bearer [token]" \
             "note": null
         }
     }],
+    "references": [
+        {
+            "id": 366,
+            "zoningId": 183,
+            "description": "Municipal Code (PDF)",
+            "url": "http://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "created": "2016-05-11T05:23:39.337241Z",
+            "updated": "2016-05-11T05:23:39.337241Z"
+        }
+    ],
     "created": "2016-03-27T01:20:38.188055Z",
-    "updated": "2016-03-27T01:20:38.188055Z"
+    "updated": "2021-05-02T13:42:54.574751Z"
 }
 ```
+
+## Data Schema
+
+| Name                      | Type      | Description                                                                          |
+|-----------------------    |---------  |-----------------------------------------------------------------------------------   |
+| id                        | integer   | Scoutred resource ID                                                                 |
+| name                      | string    | Display name of the layer.                                                           |
+| jurisdiction              | object    | The Jurisdiction that administer's the overlay.                                      |
+| designation               | string    | The Jurisdiction's zoning designation code                                           |
+| bounds                    | geojson   | A geoJSON object for the bounding box of the overlay.                                |
+| geohash                   | string    | A geohash of the overlay.                                                            |
+| use                       | object    | Describes the primary and secondary uses for of the zoning. These are normalized values across jurisdictions.|
+| use.primary               | string    | Can be one of: `commercial`, `industrial`, `mixed use`, `open space`, `planned district`, `residential`, `government`, `agriculture`, `parking`. |
+| use.secondary             | string    | A sub attribute under `use.primary`. For exmple, `residential` will be either `single family` or `multi family`. This field is not currently stable and should not be relied on. |
+| regulations               | array     | An array of various land used regulations (i.e. height limits, lot coverage, setbacks, etc.)
+| references                | array     | An array of reference links associated with the overlay.                             |
+| created                   | string    | A RFC3339 timestamp for record creation.                                             |
+| updated                   | string    | A RFC3339 timestamp for record modification.                                         |
