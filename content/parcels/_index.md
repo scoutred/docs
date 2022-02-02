@@ -1,5 +1,5 @@
 ---
-date: 2018-12-23T19:56:50+01:00
+date: 2022-02-01T16:00:00+00:00
 title: Parcels
 ---
 
@@ -117,7 +117,7 @@ $ curl -H "Authorization: Bearer [token]" \
 ```
 
 
-## Example Resource
+### Example Resource
 
 ```javascript
 {
@@ -205,5 +205,73 @@ $ curl -H "Authorization: Bearer [token]" \
    "updated": "2016-07-11T23:24:34.965674Z",
    "unlocked": false, // if false owner information is redacted
    "collection": [... collecitons resource ...]
+}
+```
+
+## /api/parcels/:id/census/:vintage
+
+The `/api/parcels/:id/census/:vintage` endpoint will return census data for the given year (the vintage) for a parcel using the parcel's Scoutred parcel ID.
+
+### HTTP Endpoint
+
+`https://scoutred.com/api/parcels/:id/census/:vintage`
+
+### URL parameters
+
+* `:id` - The parcel's Scoutred parcel ID. The ID can be obtained using the [Address Search API](/addresses/#api-search-addresses).
+* `:vintage` - The census year (currently only `2010` is available.)
+
+
+### Example Request
+
+```bash
+$ curl -H "Authorization: Bearer [token]" \ 
+	-X GET https://scoutred.com/api/parcels/210502/census/2010
+```
+
+### Example Response
+
+```javascript
+{
+  "parcelId": 1036838, // The scoutred Parcel ID of the requested parcel
+  "vintage": 2010, // The census year
+  "uacs": [ // list of all UAC's that the parcel intersects with
+    {
+      "code": "78661", // UAC code assigned by Census Bureau
+      "functionalStatus": {
+        "code": "S",
+        "description": "Statistical Entity",
+        "entities": [ // Functional Geographic entities of the is UAC 
+          "Legislative District (Upper Chamber)",
+          "State or Equivalent Feature",
+          "Sub-Minor Civil Division",
+          "Tribal Subdivision",
+          "Unified School District",
+          "Urban Growth Area",
+          "Voting District"
+        ]
+      },
+      "landAreaSquareFeet": 6223544147, // Land Area in the UAC in Square Feet
+      "landAreaSquareMeters": 1896936256, // Land Area in the UAC in Square Meters (this is the primary)
+      "legalAreaDescription": {
+        "code": "75", // type of land area
+        "description": "Urbanized Area (suffix)",
+        "entities": [ 
+          "Urban Area"
+        ],
+        "typeCode": "U" // 'U' for Urbanized Area, and 'S' for an Urban Cluster
+      },
+      "mtfcc": { // (MAF/Tiger Feature Classification Code) is a 5-digit code assigned by the Census Bureau intended to classify and describe geographic objects or features.
+        "description": "Densely settled territory that contains at least 2,500 people. The subtypes of this feature are Urbanized Area (UA), which consists of 50,000 + people and Urban Cluster, which ranges between 2,500 and 49,999 people.", 
+        "featureClass": "Urban Area", 
+        "id": "G3500", 
+        "superClass": "Tabulation Area"
+      },
+      "name": "San Diego, CA",
+      "parcelCoveragePercentage": 100, // Percentage of the parcel that intersects with this UAC. 
+      "waterAreaSquareFeet": 242489708, // Water Area in the UAC in Square Feet
+      "waterAreaSquareMeters": 73910863 // Water Area in the UAC in Square Meters (primary).
+    }
+  ]
 }
 ```
